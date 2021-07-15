@@ -1,26 +1,40 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-export default class Modal extends React.Component {
-   state = {
-      isOpen: false,
+
+
+function Modal({Setname}){
+   const [isOpen,setIsOpen] = useState(false)
+   const [inputValue,setInputValue] = useState('')
+
+   function SetName(value){
+      setInputValue(value)
    }
-   render() {
-      return (
-         <React.Fragment >
+   
+   function Nickname(event){
+      if(event.key === "Enter" && inputValue){
+         Setname(inputValue)
+         setIsOpen(false)
+      }
 
-         </React.Fragment>
-      )
    }
-}
-
-{/* <button className='btn' onClick={() => {this.setState({isOpen:true})}} >Open Modal</button>
-{this.state.isOpen && (
-<div className='modal'>
-<div className='modal__body'>
-<h2>Modal Title</h2>
-<p>Modal Text for testing</p>
-<button className='btn '  onClick={() => {this.setState({isOpen:false})}}>Close Modal</button>
-</div>
-</div>
-)
-} */}
+   function SubmitHandler(event){
+      event.preventDefault()
+   }
+   return (
+         isOpen ? (
+         <div className='modal'>
+            <div className='modal__body'>
+               <h2>Welcome, tap your nickname and enjoy game</h2>
+                  <form  className='Form__content' onSubmit={SubmitHandler}>
+                     <div className='form__main'>
+                        <label className='Form__label'>Name: </label>
+                        <input className='Form__input' value={inputValue}
+                        onChange={event => SetName(event.target.value)} 
+                        onKeyPress={Nickname} required />
+                     </div>
+                  </form>
+            </div>
+         </div>) : null
+   )
+   }
+export default Modal

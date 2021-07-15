@@ -1,4 +1,6 @@
 body {
+  width: 100%;
+  height: 100%;
   background: rgb(84,95,125);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,3 +10,135 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app{
+  margin: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.app__main{
+  flex: 1 0 55%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 500px;
+  margin: 0 100px 0 0;
+  background: rgb(68,66,94);
+}
+.app__info{
+  flex: 1 0 45%;
+  color: white;
+  font-size: 50px;
+  line-height: 150%;
+}
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0 0 0 ;
+}
+.modal__body{
+  padding: 2rem;
+  width: 500px;
+  border-radius: 5px;
+  background:rgb(78, 90, 119);
+  color: black;
+  height: 300px;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.modal__body h2{
+  font-size: 30px;
+}
+.modal__body p{
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+.zero{
+  width: 60%;
+  margin: 0 auto;
+  height: 80%;
+  border: 10px solid white;
+  opacity: .8;
+  border-radius: 50%;
+}
+.cross{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+}
+.cross::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  top: 45%;
+  right: 0;
+  left: 10%;
+  bottom: 0;
+  height: 15px;
+  background: white;
+  transform: rotate(-45deg);
+}
+.cross::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  top: 45%;
+  right: 0;
+  left: 10%;
+  bottom: 0;
+  height: 15px;
+  background: white;
+  transform: rotate(45deg);
+}
+.cross span:nth-child(1) {
+  transform: rotate(45deg) translateY(50%) translateX(30%);
+}
+.cross span:nth-child(2) {
+  transform: rotate(-45deg) ;
+}
+.app__content{
+  flex: 1 1 30%;
+
+}
+.app__content:nth-child(1){
+  border-bottom: 10px solid rgb(168,85,193);
+  border-right: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(2){
+  border-bottom: 10px solid rgb(168,85,193);
+  border-right: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(3){
+  border-bottom: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(4){
+  border-bottom: 10px solid rgb(168,85,193);
+  border-right: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(5){
+  border-bottom: 10px solid rgb(168,85,193);
+  border-right: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(6){
+  border-bottom: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(7){
+  border-right: 10px solid rgb(168,85,193);
+}
+.app__content:nth-child(8){
+  border-right: 10px solid rgb(168,85,193);
+}
+.hide{
+  display: none;
+}
