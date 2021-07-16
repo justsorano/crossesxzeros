@@ -1,32 +1,34 @@
 import React,{useState} from 'react'
 
-
-
-function Modal({getPlayer1,getPlayer2}){
+function Modal({getPlayer1,getPlayer2,Avatar}){
    const [isOpen,setIsOpen] = useState(true)
    const [Player1,setPlayer1] = useState('')
    const [Player2,setPlayer2] = useState('')
-
+   // изменеия состояние поля input player1
    function SetPlayer1(value){
       setPlayer1(value)
    }
+   // изменеия состояние поля input player2
    function SetPlayer2(value){
       setPlayer2(value)
    }
-   
+   // установка имен пользователей
    function Nickname(){
       if(Player1 && Player2){
          getPlayer1(Player1.trim())
          getPlayer2(Player2.trim())
          setIsOpen(false)
+         Avatar(true)
       }
    }
+   // убираем перезагрузку страници у формы
    function SubmitHandler(event){
       event.preventDefault()
    }
+
    return (
-         isOpen ? (
-         <div className='modal'>
+         isOpen ?
+         (<div className='modal'>
             <div className='modal__body'>
                <h2>Welcome, tap your nickname and enjoy the game</h2>
                   <form  className='modal__content' onSubmit={SubmitHandler}>
