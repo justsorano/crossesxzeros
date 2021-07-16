@@ -31,6 +31,10 @@ function Avatar({SetAvatarP1,SetAvatarP2,close,player1,player2}){
 
 }
 Avatar.propTypes ={
-
+   SetAvatarP1: PropTypes.func.isRequired,
+   SetAvatarP2: PropTypes.func.isRequired,
+   close: PropTypes.func.isRequired,
+   player1: PropTypes.string.isRequired,
+   player2: PropTypes.string.isRequired
 }
 export default Avatar

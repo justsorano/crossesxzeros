@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 
 
 function Winner({winner,closeWindow,Draw}){
@@ -32,5 +32,9 @@ function Winner({winner,closeWindow,Draw}){
       </div>
          ) : null
       )
+   }
+   Winner.propTypes ={
+      Draw: PropTypes.bool.isRequired,
+      closeWindow: PropTypes.func.isRequired,
    }
 export default Winner

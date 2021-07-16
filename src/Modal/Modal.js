@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import PropTypes from 'prop-types'
 
 function Modal({getPlayer1,getPlayer2,Avatar}){
    const [isOpen,setIsOpen] = useState(true)
@@ -49,5 +50,10 @@ function Modal({getPlayer1,getPlayer2,Avatar}){
             </div>
          </div>) : null
    )
+   }
+   Modal.propTypes ={
+      getPlayer1: PropTypes.func.isRequired,
+      getPlayer2: PropTypes.func.isRequired,
+      Avatar: PropTypes.func.isRequired
    }
 export default Modal

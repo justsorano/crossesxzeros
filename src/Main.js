@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Item from './Item'
 import Winner from './Modal/Winner'
+import PropTypes from 'prop-types'
 
 function Main({player1,player2,getscore1,getscore2}){
    // счетчик ходов
@@ -107,4 +108,8 @@ function Main({player1,player2,getscore1,getscore2}){
    )
 }
 
+Main.propTypes ={
+   getscore1: PropTypes.func.isRequired,
+   getscore2: PropTypes.func.isRequired,
+}
 export default Main

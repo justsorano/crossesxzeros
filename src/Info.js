@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 
 // Правая часть игры с информацией
 function Info({player1,player2,scorePlayer1,scorePlayer2,avatarP1,avatarP2}){
@@ -17,5 +17,12 @@ function Info({player1,player2,scorePlayer1,scorePlayer2,avatarP1,avatarP2}){
       </div>
    )
 }
-
+Info.propTypes ={
+   player1: PropTypes.string.isRequired,
+   player2: PropTypes.string.isRequired,
+   avatarP1: PropTypes.string.isRequired,
+   avatarP2: PropTypes.string.isRequired,
+   scorePlayer1: PropTypes.number.isRequired,
+   scorePlayer2: PropTypes.number.isRequired
+}
 export default Info
